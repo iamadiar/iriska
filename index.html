@@ -1,49 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CUSTOMIZE: Browser tab title -->
-    <title>Will You Be My Valentine? 💝</title>
-    <!-- Google Fonts -->
+    <title>Будешь моей Валентиной? 💝</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Floating Background Elements -->
     <div class="floating-elements">
         <!-- Hearts and bears will be added here by JavaScript -->
     </div>
 
-    <!-- Main Content Container -->
     <div class="container">
         <h1 id="valentineTitle"></h1>
-        
+
         <!-- Music Player -->
         <div id="musicControls" class="music-controls">
-            <button id="musicToggle" class="music-btn">🎵 Play Music</button>
+            <button id="musicToggle" class="music-btn">🎵 Включи нашу песню</button>
             <audio id="bgMusic" loop>
                 <source id="musicSource" type="audio/mpeg">
-                Your browser does not support the audio element.
+                Браузер не поддерживает аудио.
             </audio>
         </div>
 
-        <!-- First Question -->
+        <!-- Первый вопрос -->
         <div class="question-section" id="question1">
             <h2 id="question1Text"></h2>
             <button class="cute-btn" onclick="moveButton(this)" id="yesBtn1"></button>
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn1"></button>
-            <!-- CUSTOMIZE: Secret answer text -->
             <div class="secret-answer">
                 <button class="cute-btn special" onclick="showNextQuestion(2)" id="secretAnswerBtn"></button>
             </div>
         </div>
 
-        <!-- Second Question (Love Meter) -->
+        <!-- Второй вопрос (Love Meter) -->
         <div class="question-section hidden" id="question2">
             <h2 id="question2Text"></h2>
-            <!-- Love meter settings: min="0" max="10000" -->
             <div class="love-meter">
                 <input type="range" min="0" max="10000" value="100" class="slider" id="loveMeter">
                 <p>
@@ -54,59 +47,46 @@
             <button class="cute-btn" onclick="showNextQuestion(3)" id="nextBtn"></button>
         </div>
 
-        <!-- Final Question -->
+        <!-- Финальный вопрос -->
         <div class="question-section hidden" id="question3">
             <h2 id="question3Text"></h2>
             <button class="cute-btn final-yes" onclick="celebrate()" id="yesBtn3"></button>
             <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
         </div>
 
-        <!-- CUSTOMIZE: Celebration message -->
-        <!-- CUSTOMIZE: Celebration message + 14 причин -->
-<div class="celebration hidden" id="celebration">
-    <h2 id="celebrationTitle"></h2>
-    <p class="celebration-text" id="celebrationMessage"></p>
-    <p class="celebration-text" id="celebrationEmojis"></p>
+        <!-- Celebration + 14 причин (появятся только здесь после "Да") -->
+        <div class="celebration hidden" id="celebration">
+            <h2 id="celebrationTitle"></h2>
+            <p class="celebration-text" id="celebrationMessage"></p>
+            <p class="celebration-text" id="celebrationEmojis"></p>
 
-    <!-- Здесь появляются 14 причин только после прохождения всего -->
-    <div id="reasons-section" style="margin-top: 40px; padding: 25px; background: rgba(255, 255, 255, 0.7); border-radius: 20px; text-align: center;">
-        <h2 style="color: #ff1493; font-family: 'Dancing Script', cursive; font-size: 2.5em; margin-bottom: 20px;">
-            14 причин, почему я люблю тебя так сильно ❤️
-        </h2>
-        <ol style="text-align: left; max-width: 650px; margin: 0 auto; font-size: 1.15em; line-height: 1.7; color: #333;">
-            <li>Твою улыбку, от которой у меня сразу становится легче на душе</li>
-            <li>Как ты морщишь носик, когда смеёшься над моими глупыми шутками</li>
-            <li>Твои голосовые сообщения по ночам, которые я переслушиваю по 10 раз</li>
-            <li>То, как мы начали встречаться в октябре и с тех пор всё только лучше</li>
-            <li>Твою поддержку, даже когда я сам в себя не верю</li>
-            <li>Как ты пахнешь (да, это странно звучит, но это правда важно)</li>
-            <li>Твои "я устала", после которых хочется просто обнять и молчать</li>
-            <li>То, как ты злишься мило, и я сразу извиняюсь</li>
-            <li>Наши разговоры до утра, когда время летит незаметно</li>
-            <li>Твою нежность, которую ты показываешь, когда никто не видит</li>
-            <li>Как ты меня понимаешь без слов, даже на расстоянии</li>
-            <li>То, что ты — моя первая мысль утром и последняя вечером</li>
-            <li>Жаль, что пока могу только писать и говорить о любви, а не обнять крепко-крепко</li>
-            <li>Просто потому что ты — это ты, и без тебя сердце пустое и болит</li>
-        </ol>
+            <!-- 14 причин -->
+            <div id="reasons-section">
+                <h2 style="color: #ff1493; font-family: 'Dancing Script', cursive; font-size: 2.8em; margin: 30px 0 20px;">
+                    14 причин, почему я люблю тебя так сильно ❤️
+                </h2>
+                <ol style="text-align: left; max-width: 700px; margin: 0 auto; font-size: 1.2em; line-height: 1.8; color: #333; padding-left: 30px;">
+                    <li>Твою улыбку, от которой у меня сразу становится легче на душе</li>
+                    <li>Как ты морщишь носик, когда смеёшься над моими глупыми шутками</li>
+                    <li>Твои голосовые сообщения по ночам, которые я переслушиваю по 10 раз</li>
+                    <li>То, как мы начали встречаться в октябре и с тех пор всё только лучше</li>
+                    <li>Твою поддержку, даже когда я сам в себя не верю</li>
+                    <li>Как ты пахнешь (да, это странно звучит, но это правда важно)</li>
+                    <li>Твои "я устала", после которых хочется просто обнять и молчать</li>
+                    <li>То, как ты злишься мило, и я сразу извиняюсь</li>
+                    <li>Наши разговоры до утра, когда время летит незаметно</li>
+                    <li>Твою нежность, которую ты показываешь, когда никто не видит</li>
+                    <li>Как ты меня понимаешь без слов, даже на расстоянии</li>
+                    <li>То, что ты — моя первая мысль утром и последняя вечером</li>
+                    <li>Жаль, что пока могу только писать и говорить о любви, а не обнять крепко-крепко</li>
+                    <li>Просто потому что ты — это ты, и без тебя сердце пустое и болит</li>
+                </ol>
+            </div>
+        </div>
     </div>
-</div>
 
-    <div class="question-section" style="margin-top: 40px; text-align: center; background: rgba(255,255,255,0.6); padding: 25px; border-radius: 20px;">
-  <h2 style="color: #f06292;">14 причин, почему я люблю тебя так сильно</h2>
-  <ol style="text-align: left; max-width: 500px; margin: 20px auto; font-size: 1.1em; line-height: 1.6;">
-    <li>Твою улыбку, которая делает мой день</li>
-    <li>Как ты морщишь носик когда смеёшься</li>
-    <li>Твои голосовые сообщения по ночам</li>
-    <li>То, как мы начали встречаться в октябре</li>
-    <!-- добавь свои личные, 10 штук -->
-    <li>Просто потому что ты — это ты, и без тебя всё пусто</li>
-  </ol>
-</div>
-
-    <!-- Scripts -->
     <script src="config.js"></script>
     <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
