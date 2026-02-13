@@ -316,3 +316,14 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+#reasons-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.celebration:not(.hidden) #reasons-section {
+    opacity: 1;
+    transform: translateY(0);
+}
