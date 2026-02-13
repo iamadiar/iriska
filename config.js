@@ -33,7 +33,7 @@ const CONFIG = {
             nextBtn: "Следующий ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Будешь ли ты моей Валентинкой 14 февраля 2025 года? 🌹", // The big question!
+            text: "Будешь ли ты моей Валентинкой? 🌹", // The big question!
             yesBtn: "Да!",                                             // Text for "Yes" button
             noBtn: "Нет"                                                 // Text for "No" button
         }
@@ -42,15 +42,15 @@ const CONFIG = {
     // Love meter messages
     // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows when they go past 5000%
-        high: "To infinity and beyond! 🚀💝",              // Shows when they go past 1000%
-        normal: "And beyond! 🥰"                           // Shows when they go past 100%
+        extreme: "Ух ты! Ты меня так сильно любишь?? 🥰🚀💝",  // Shows when they go past 5000%
+        high: "Бесконечность не предел! 🚀💝",              // Shows when they go past 1000%
+        normal: "И не только! 🥰"                           // Shows when they go past 100%
     },
 
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Ура! Я самый счастливый человек на свете! 🎉💝💖💝💓",
-        message: "Now come get your gift, a big warm hug and a huge kiss!",
+        message: "Люблю тебя очень сильно <3",
         emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 
